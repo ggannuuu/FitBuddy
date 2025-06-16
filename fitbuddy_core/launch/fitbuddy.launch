@@ -1,0 +1,15 @@
+<launch>
+  <node name="uwb_node" pkg="fitbuddy_core" type="uwb_node.py" output="screen"/>
+  <node name="target_node" pkg="fitbuddy_core" type="target_node.py" output="screen"/>
+  <node name="lidar_node" pkg="fitbuddy_core" type="lidar_node.py" output="screen"/>
+
+  <node name="rplidarNode" pkg="fitbuddy_core" type="rplidar_node" output="screen">
+    <param name="serial_port"         type="string" value="/dev/ttyUSB0"/>
+    <param name="serial_baudrate"     type="int"    value="115200"/>
+    <param name="frame_id"            type="string" value="laser"/>
+    <param name="inverted"            type="bool"   value="false"/>
+    <param name="angle_compensate"    type="bool"   value="true"/>
+  </node>
+
+  <node name="rplidarClient" pkg="fitbuddy_core" type="rplidar_client" output="screen"/>
+</launch>

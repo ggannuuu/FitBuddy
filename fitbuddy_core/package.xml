@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>fitbuddy_core</name>
+  <version>0.0.1</version>
+  <description>Core package for Fitbuddy: the autonomous gym-assistant robot.</description>
+
+  <maintainer email="ggannuuu@gmail.com">acrl</maintainer>
+  <license>TODO</license>
+
+  <!-- Build system -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Build dependencies -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>rosconsole</build_depend>
+
+  <!-- Run-time dependencies -->
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>rosconsole</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+
+  <!-- Build exports -->
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>rosconsole</build_export_depend>
+
+  <export>
+    <!-- Placeholder for future tags -->
+  </export>
+</package>
