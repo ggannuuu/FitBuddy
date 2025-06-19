@@ -26,7 +26,7 @@ class TargetEstimator:
                 pos = self.estimate_target()
                 point_msg = Point(x=pos[0], y=pos[1], z=pos[2])
                 self.pub.publish(point_msg)
-                rospy.loginfo(f"Target position: {pos}")
+                # rospy.loginfo(f"Target position: {pos}")
         except Exception as e:
             rospy.logwarn(f"[TargetEstimator] Failed to parse msg: {msg.data}, error: {e}")
 

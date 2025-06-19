@@ -149,10 +149,10 @@ install(TARGETS rplidarNode rplidarNodeClient
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
-install(DIRECTORY launch rviz sdk
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-  USE_SOURCE_PERMISSIONS
-)
+# install(DIRECTORY launch rviz sdk
+#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+#   USE_SOURCE_PERMISSIONS
+# )
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/fitbuddy_core.cpp
@@ -196,6 +196,7 @@ catkin_install_python(PROGRAMS
   scripts/uwb_node.py
   scripts/target_node.py
   scripts/lidar_node.py
+  scripts/main_node.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

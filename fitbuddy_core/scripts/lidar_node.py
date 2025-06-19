@@ -14,7 +14,9 @@ def adaptive_sample(ranges, angle_min, angle_increment, range_min, range_max, de
     prev_valid = None
 
     for r in ranges:
-        if math.isnan(r) or r < range_min or r > range_max:
+        # Filter the distance over 5
+        if math.isnan(r) or r < range_min or r > min(range_max, 5.0):
+
             angle += angle_increment
             continue
         if prev_valid is None or abs(r - prev_valid) > delta_thresh:
@@ -72,6 +74,7 @@ class LidarNode:
 if __name__ == "__main__":
     try:
         node = LidarNode()
+        
         rospy.spin()
     except rospy.ROSInterruptException:
         pass
