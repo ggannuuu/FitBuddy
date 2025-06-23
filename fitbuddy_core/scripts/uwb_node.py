@@ -14,9 +14,9 @@ class UWBPublisher:
 
         try:
             self.anchor_port = {
-                "A1": serial.Serial('/dev/ttyUSB1', 115200, timeout=0.1),
-                "A2": serial.Serial('/dev/ttyUSB2', 115200, timeout=0.1),
-                "A3": serial.Serial('/dev/ttyUSB3', 115200, timeout=0.1)
+                "A1": serial.Serial('/dev/uwb_anchor_a1', 115200, timeout=0.1),
+                "A2": serial.Serial('/dev/uwb_anchor_a2', 115200, timeout=0.1),
+                "A3": serial.Serial('/dev/uwb_anchor_a3', 115200, timeout=0.1)
             }
         except Exception as e:
             rospy.logerr(f"[UWBNode] Failed to connect to one of the serial ports: {e}")
@@ -30,7 +30,7 @@ class UWBPublisher:
                 line = port.readline().decode('utf-8').strip()
                 if line:
                     msg = f"{anchor_name} {line}"
-                    rospy.loginfo(msg)
+                    # rospy.loginfo(msg)
                     self.pub.publish(msg)
             except Exception as e:
                 rospy.logerr(f"[UWBNode] Error reading from {anchor_name}: {e}")

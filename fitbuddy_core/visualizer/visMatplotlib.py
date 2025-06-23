@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import warnings
 
 from mpl_toolkits.mplot3d import Axes3D

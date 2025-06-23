@@ -10,9 +10,9 @@ class TargetEstimator:
     def __init__(self):
         self.anchors = {}
         self.anchor_centers = [
-            np.array([0,  np.sqrt(3)/2, 0]),
-            np.array([-1, -np.sqrt(3)/2, 0]),
-            np.array([1,  -np.sqrt(3)/2, 0])   
+            np.array([-0.21,  0, 0]),
+            np.array([0.15, 0.09, 0]),
+            np.array([0.15,  -0.09, 0])   
         ]
         self.pub = rospy.Publisher('/target_position', Point, queue_size=10)
         rospy.Subscriber('/uwb_distance', String, self.uwb_callback)
